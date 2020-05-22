@@ -14,8 +14,8 @@
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
-    "start": "ember serve",
-    "test": "ember test"
+    "start": "ember serve --port 4455",
+    "test": "ember test --test-port 4456"
   },
   "devDependencies": {
     "@ember/jquery": "^0.6.0",
@@ -40,7 +40,6 @@
     "ember-qunit": "^4.4.1",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.11.1",
-    "ember-welcome-page": "^4.0.0",
     "eslint-plugin-ember": "^6.2.0",
     "eslint-plugin-node": "^9.0.1",
     "loader.js": "^4.7.0",
@@ -48,5 +47,8 @@
   },
   "engines": {
     "node": "8.* || >= 10.*"
+  },
+  "dependencies": {
+    "ember-inline-svg": "^1.0.0"
   }
 }
