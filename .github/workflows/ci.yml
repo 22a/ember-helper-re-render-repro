@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+    branches:
+      - *
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    env:
+      CI: 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup NodeJS Runtime
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      - name: Install dependencies (yarn)
+        run: yarn install
+
+      - name: Lint (hbs)
+        run: yarn lint:hbs
+
+      - name: Lint (js)
+        run: yarn lint:js
+
+      - name: Run tests
+        run: yarn test
