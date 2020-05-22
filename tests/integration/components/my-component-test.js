@@ -13,6 +13,8 @@ module('Integration | Component | my-component', function(hooks) {
 
   test('it doesn\'t blow up when clicking on an inline svg', async function(assert) {
     await render(hbs`<MyComponent />`);
+    // this spec actually appears to always pass, but if I pauseTest and click
+    // the svg myself it throws - you'll have to trust me ¯\_(ツ)_/¯
     await click('svg');
     assert.ok(true);
   });
